@@ -66,7 +66,7 @@ function Navbar() {
           </span>
           <span
             className={`text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] transition-colors duration-300 ${
-              scrolled ? "text-accent" : "text-blue-200"
+              scrolled ? "text-primary" : "text-red-200"
             }`}
           >
             Disposal
@@ -92,7 +92,7 @@ function Navbar() {
             className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
               scrolled
                 ? "bg-primary text-white hover:bg-primary-dark shadow-card"
-                : "bg-white text-primary hover:bg-blue-50"
+                : "bg-white text-navy hover:bg-gray-50"
             }`}
           >
             (209) 358-1710
@@ -165,7 +165,7 @@ function PageHero() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1f4d]/88 via-[#1a3a7a]/78 to-[#0c4a6e]/82" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0f1d3a]/82 to-[#1a1a2e]/82" />
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -180,7 +180,7 @@ function PageHero() {
         <div className="max-w-3xl">
           <div className="animate-fade-in inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-blue-100 font-medium">
+            <span className="text-sm text-gray-200 font-medium">
               Serving Merced County Since 1985
             </span>
           </div>
@@ -188,10 +188,10 @@ function PageHero() {
           <h1 className="animate-fade-in-up text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
             Roll-Off Dumpster
             <br />
-            <span className="text-blue-300">Services</span>
+            <span className="text-red-300">Services</span>
           </h1>
 
-          <p className="animate-fade-in-up delay-200 mt-6 text-lg md:text-xl text-blue-100/90 max-w-xl leading-relaxed">
+          <p className="animate-fade-in-up delay-200 mt-6 text-lg md:text-xl text-gray-200/90 max-w-xl leading-relaxed">
             Dependable roll-off dumpsters for every project type. Managing debris
             shouldn&apos;t complicate your project timeline.
           </p>
@@ -199,7 +199,7 @@ function PageHero() {
           <div className="animate-fade-in-up delay-400 mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="tel:2093581710"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-primary font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Call for Pricing
             </a>
@@ -276,114 +276,203 @@ function DumpsterSizes() {
       loads: "Approx. 5 pickup loads",
       dimensions: '12\'L x 8\'W x 3\'5"H',
       bestUse: "Heavy materials like concrete and asphalt",
-      color: "from-blue-500 to-blue-700",
+      image: "/15yard.png",
+      gradient: "from-[#8b1a1a] to-[#0a1628]",
+      glowColor: "rgba(139, 26, 26, 0.3)",
+      tag: "Compact",
     },
     {
       yard: "20",
       loads: "Approx. 8 pickup loads",
-      dimensions: '18\'L x 8\'W x 4\'H',
+      dimensions: "18'L x 8'W x 4'H",
       bestUse:
         "Ideal for heavy-debris home clean-outs and remodeling cleanup",
-      color: "from-blue-600 to-indigo-700",
+      image: "/20yard.png",
+      gradient: "from-[#a52222] to-[#0f1d3a]",
+      glowColor: "rgba(165, 34, 34, 0.3)",
+      tag: "Popular",
     },
     {
       yard: "30",
       loads: "Approx. 14 pickup loads",
-      dimensions: '20\'L x 8\'W x 6\'H',
+      dimensions: "20'L x 8'W x 6'H",
       bestUse:
         "Ideal for office or large home renovation projects or junk removal",
-      color: "from-indigo-600 to-blue-800",
+      image: "/30yard.png",
+      gradient: "from-[#6b1414] to-[#12243d]",
+      glowColor: "rgba(107, 20, 20, 0.3)",
+      tag: "Large",
     },
     {
       yard: "40",
       loads: "Approx. 16 pickup loads",
-      dimensions: '22\'L x 8\'W x 8\'H',
+      dimensions: "22'L x 8'W x 8'H",
       bestUse: "Ideal for large construction & remodeling projects",
-      color: "from-blue-800 to-[#0c1f4d]",
+      image: "/40yard.png",
+      gradient: "from-[#0a1628] to-[#8b1a1a]",
+      glowColor: "rgba(10, 22, 40, 0.3)",
+      tag: "Max Capacity",
     },
   ];
 
   return (
     <section
       id="dumpster-sizes"
-      className="py-20 md:py-28 bg-gradient-blue-subtle"
+      className="py-24 md:py-32 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #f5f5f7 0%, #edeef2 50%, #f5f5f7 100%)",
+      }}
     >
-      <div ref={obs.ref} className="max-w-7xl mx-auto px-5 md:px-8">
+      {/* Subtle decorative elements */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.04] pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, #8b1a1a 0%, transparent 70%)",
+        }}
+      />
+
+      <div ref={obs.ref} className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
         <div
-          className={`text-center max-w-2xl mx-auto mb-16 ${
+          className={`text-center max-w-2xl mx-auto mb-20 ${
             obs.isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 bg-primary/5 px-4 py-1.5 rounded-full">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-primary mb-5 bg-primary/8 px-5 py-2 rounded-full border border-primary/10">
             Dumpster Sizes
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-tight">
             Choose the Right Size for{" "}
             <span className="gradient-text">Your Project</span>
           </h2>
-          <p className="mt-4 text-muted text-lg">
+          <p className="mt-5 text-muted text-lg md:text-xl leading-relaxed">
             From small cleanups to large construction sites — we have a container
             to match.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
           {sizes.map((s, i) => (
             <div
               key={s.yard}
-              className={`group relative bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 ${
+              className={`group relative ${
                 obs.isVisible
                   ? `animate-fade-in-up delay-${(i + 1) * 100}`
                   : "opacity-0"
               }`}
             >
-              {/* Colored header */}
+              {/* Glow effect behind card */}
               <div
-                className={`bg-gradient-to-br ${s.color} px-6 py-8 text-center`}
+                className="absolute -inset-1 rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"
+                style={{ background: s.glowColor }}
+              />
+
+              {/* Card */}
+              <div
+                className="relative h-full bg-white rounded-3xl overflow-hidden transition-all duration-500 group-hover:-translate-y-2 flex flex-col"
+                style={{
+                  boxShadow:
+                    "0 1px 3px rgba(10,22,40,0.04), 0 8px 32px rgba(10,22,40,0.08), 0 24px 60px rgba(10,22,40,0.04)",
+                }}
               >
-                <div className="text-6xl font-black text-white leading-none">
-                  {s.yard}
-                </div>
-                <div className="text-sm font-semibold text-blue-100 mt-1 uppercase tracking-wider">
-                  Yard Dumpster
-                </div>
-              </div>
+                {/* Gradient border top */}
+                <div
+                  className={`h-1.5 bg-gradient-to-r ${s.gradient}`}
+                />
 
-              {/* Details */}
-              <div className="p-6 space-y-4">
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted mb-1">
-                    Holds
+                {/* Shimmer effect on hover */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20"
+                  style={{
+                    background:
+                      "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 55%, transparent 60%)",
+                    backgroundSize: "200% 100%",
+                    animation: "shimmer 2s ease-in-out infinite",
+                  }}
+                />
+
+                {/* Image section — top */}
+                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100/50 flex items-center justify-center px-5 pt-8 pb-5">
+                  {/* Tag */}
+                  <div
+                    className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white bg-gradient-to-r ${s.gradient} shadow-lg z-10`}
+                  >
+                    {s.tag}
                   </div>
-                  <div className="text-foreground font-semibold text-[15px]">
-                    {s.loads}
-                  </div>
-                </div>
-                <div className="w-full h-px bg-border" />
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted mb-1">
-                    Dimensions
-                  </div>
-                  <div className="text-foreground font-semibold text-[15px]">
-                    {s.dimensions}
-                  </div>
-                </div>
-                <div className="w-full h-px bg-border" />
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted mb-1">
-                    Best Use
-                  </div>
-                  <div className="text-muted text-[14px] leading-relaxed">
-                    {s.bestUse}
+
+                  <div className="relative w-full aspect-[16/10]">
+                    <Image
+                      src={s.image}
+                      alt={`${s.yard} Yard Dumpster with dimensions`}
+                      fill
+                      className="object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
                   </div>
                 </div>
 
-                <a
-                  href="tel:2093581710"
-                  className="mt-2 block w-full text-center px-4 py-3 rounded-xl bg-primary/5 text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                >
-                  Get {s.yard} Yard Details
-                </a>
+                {/* Content section — bottom */}
+                <div className="flex-1 p-6 flex flex-col">
+                  {/* Size header */}
+                  <div className="text-center mb-4">
+                    <div className="flex items-baseline justify-center gap-1.5">
+                      <span
+                        className="text-5xl font-black tracking-tight bg-clip-text text-transparent"
+                        style={{
+                          backgroundImage: "linear-gradient(135deg, #0a1628, #8b1a1a)",
+                        }}
+                      >
+                        {s.yard}
+                      </span>
+                      <span className="text-base font-bold text-foreground/60 uppercase tracking-wide">
+                        Yard
+                      </span>
+                    </div>
+                    <div className="text-xs font-semibold text-muted uppercase tracking-wider mt-0.5">
+                      Roll-Off Dumpster
+                    </div>
+                  </div>
+
+                  {/* Details */}
+                  <div className="space-y-3 flex-1">
+                    <div className="bg-surface/70 rounded-xl px-4 py-3 border border-border/40">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted/70 mb-0.5">
+                        Capacity
+                      </div>
+                      <div className="text-foreground font-semibold text-[14px]">
+                        {s.loads}
+                      </div>
+                    </div>
+
+                    <div className="bg-surface/70 rounded-xl px-4 py-3 border border-border/40">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted/70 mb-0.5">
+                        Dimensions
+                      </div>
+                      <div className="text-foreground font-semibold text-[14px]">
+                        {s.dimensions}
+                      </div>
+                    </div>
+
+                    <div className="bg-surface/70 rounded-xl px-4 py-3 border border-border/40">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted/70 mb-0.5">
+                        Best For
+                      </div>
+                      <div className="text-muted text-[13px] leading-relaxed">
+                        {s.bestUse}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <a
+                    href="tel:2093581710"
+                    className={`mt-5 block w-full text-center px-5 py-3.5 rounded-xl bg-gradient-to-r ${s.gradient} text-white font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 relative overflow-hidden`}
+                  >
+                    <span className="relative z-10">
+                      Call for {s.yard}-Yard Quote
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -782,7 +871,7 @@ function CTABanner() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0c1f4d]/92 via-[#1a3a7a]/87 to-[#0c4a6e]/82" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/92 via-[#0f1d3a]/87 to-[#1a1a2e]/82" />
           </div>
 
           <div className="relative z-10 text-center py-16 md:py-24 px-6 md:px-12">
@@ -791,7 +880,7 @@ function CTABanner() {
               <br />
               We Haul &rsquo;Em!
             </h2>
-            <p className="mt-6 text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="mt-6 text-gray-200 text-lg max-w-2xl mx-auto">
               No matter the size or complexity of your project, Central Valley
               Disposal provides dependable roll-off dumpsters and responsive
               customer service.
@@ -818,14 +907,14 @@ function WhyUs() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-blue">
+    <section className="py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #12243d 100%)' }}>
       <div ref={obs.ref} className="max-w-7xl mx-auto px-5 md:px-8">
         <div
           className={`text-center max-w-2xl mx-auto mb-14 ${
             obs.isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-blue-200 mb-4 bg-white/10 px-4 py-1.5 rounded-full">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-red-300 mb-4 bg-white/10 px-4 py-1.5 rounded-full">
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">
@@ -932,7 +1021,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">P</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Phone</h4>
             <a
@@ -949,7 +1038,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">E</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Email</h4>
             <a
@@ -966,7 +1055,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">A</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Address</h4>
             <p className="mt-2 text-muted font-medium">
@@ -1007,7 +1096,7 @@ function Contact() {
    ═══════════════════════════════════════════════════ */
 function Footer() {
   return (
-    <footer className="bg-[#0c1f4d] text-white">
+    <footer className="bg-[#0a1628] text-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-14">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
@@ -1015,18 +1104,18 @@ function Footer() {
               <span className="text-xl font-extrabold tracking-tight">
                 Central Valley
               </span>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-red-400">
                 Disposal
               </span>
             </div>
-            <p className="mt-4 text-blue-200/70 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-xs">
               Family-owned since 1985. Reliable roll-off dumpster rentals proudly
               serving Merced County, California.
             </p>
           </div>
 
           <div>
-            <h5 className="font-bold text-sm uppercase tracking-wider text-blue-200 mb-4">
+            <h5 className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Quick Links
             </h5>
             <div className="space-y-2.5">
@@ -1039,7 +1128,7 @@ function Footer() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="block text-blue-200/70 hover:text-white transition-colors text-sm"
+                  className="block text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   {l.label}
                 </Link>
@@ -1048,10 +1137,10 @@ function Footer() {
           </div>
 
           <div>
-            <h5 className="font-bold text-sm uppercase tracking-wider text-blue-200 mb-4">
+            <h5 className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Contact Info
             </h5>
-            <div className="space-y-3 text-sm text-blue-200/70">
+            <div className="space-y-3 text-sm text-gray-400">
               <a
                 href="tel:2093581710"
                 className="block hover:text-white transition-colors"
@@ -1070,7 +1159,7 @@ function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <p className="mt-3 text-blue-200/40 text-xs">
+          <p className="mt-3 text-gray-500/60 text-xs">
             &copy; {new Date().getFullYear()} Central Valley Disposal. All rights
             reserved.{" "}
             <a href="#" className="hover:text-white transition-colors">

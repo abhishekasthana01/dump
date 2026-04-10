@@ -69,7 +69,7 @@ function Navbar() {
           </span>
           <span
             className={`text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] transition-colors duration-300 ${
-              scrolled ? "text-accent" : "text-blue-200"
+              scrolled ? "text-primary" : "text-red-200"
             }`}
           >
             Disposal
@@ -110,7 +110,7 @@ function Navbar() {
             className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
               scrolled
                 ? "bg-primary text-white hover:bg-primary-dark shadow-card"
-                : "bg-white text-primary hover:bg-blue-50"
+                : "bg-white text-navy hover:bg-gray-50"
             }`}
           >
             (209) 358-1710
@@ -197,7 +197,7 @@ function Hero() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1f4d]/85 via-[#1a3a7a]/75 to-[#0c4a6e]/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0f1d3a]/82 to-[#1a1a2e]/80" />
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
@@ -210,7 +210,7 @@ function Hero() {
           {/* Badge */}
           <div className="animate-fade-in inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-blue-100 font-medium">
+            <span className="text-sm text-gray-200 font-medium">
               Serving Merced County Since 1985
             </span>
           </div>
@@ -218,10 +218,10 @@ function Hero() {
           <h1 className="animate-fade-in-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight">
             You Fill &rsquo;Em,
             <br />
-            <span className="text-blue-300">We Haul &rsquo;Em!</span>
+            <span className="text-red-300">We Haul &rsquo;Em!</span>
           </h1>
 
-          <p className="animate-fade-in-up delay-200 mt-6 text-lg md:text-xl text-blue-100/90 max-w-xl leading-relaxed">
+          <p className="animate-fade-in-up delay-200 mt-6 text-lg md:text-xl text-gray-200/90 max-w-xl leading-relaxed">
             Reliable roll-off dumpster solutions for every cleanup. From household cleanouts to
             construction debris — dependable, on-time service you can count on.
           </p>
@@ -229,7 +229,7 @@ function Hero() {
           <div className="animate-fade-in-up delay-400 mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="tel:2093581710"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-primary font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Call for Pricing
             </a>
@@ -242,17 +242,17 @@ function Hero() {
           </div>
 
           {/* Trust indicators */}
-          <div className="animate-fade-in-up delay-600 mt-14 flex flex-wrap gap-x-8 gap-y-3 text-blue-200/80 text-sm">
+          <div className="animate-fade-in-up delay-600 mt-14 flex flex-wrap gap-x-8 gap-y-3 text-gray-300/80 text-sm">
             <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-blue-300" />
+              <span className="w-1 h-1 rounded-full bg-red-400" />
               35+ Years Experience
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-blue-300" />
+              <span className="w-1 h-1 rounded-full bg-red-400" />
               Family-Owned &amp; Operated
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-blue-300" />
+              <span className="w-1 h-1 rounded-full bg-red-400" />
               No Hidden Fees
             </span>
           </div>
@@ -512,7 +512,7 @@ function Services() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1f4d]/70 via-[#0c1f4d]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 via-[#0a1628]/20 to-transparent" />
                 <h3 className="absolute bottom-5 left-6 text-xl md:text-2xl font-bold text-white">
                   {svc.title}
                 </h3>
@@ -710,20 +710,20 @@ function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="py-20 md:py-28 bg-gradient-blue">
+    <section id="why-us" className="py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #12243d 100%)' }}>
       <div ref={obs.ref} className="max-w-7xl mx-auto px-5 md:px-8">
         <div
           className={`text-center max-w-2xl mx-auto mb-16 ${
             obs.isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-blue-200 mb-4 bg-white/10 px-4 py-1.5 rounded-full">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-red-300 mb-4 bg-white/10 px-4 py-1.5 rounded-full">
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">
             Why Choose Central Valley Disposal
           </h2>
-          <p className="mt-4 text-blue-200 text-lg">
+          <p className="mt-4 text-gray-300 text-lg">
             Our commitment to reliability, friendly service, fair pricing, and a long history of
             community service sets us apart.
           </p>
@@ -740,7 +740,7 @@ function WhyUs() {
               }`}
             >
               <h4 className="text-lg font-bold text-white">{r.title}</h4>
-              <p className="mt-2 text-blue-200/80 text-sm leading-relaxed">{r.desc}</p>
+              <p className="mt-2 text-gray-300/80 text-sm leading-relaxed">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -771,7 +771,7 @@ function CTA() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0c1f4d]/90 via-[#1a3a7a]/85 to-[#0c4a6e]/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/92 via-[#0f1d3a]/87 to-[#1a1a2e]/82" />
           </div>
 
           <div className="relative z-10 text-center py-16 md:py-24 px-6 md:px-12">
@@ -779,14 +779,14 @@ function CTA() {
               Start Your Cleanup With a<br />
               Dumpster You Can Depend On
             </h2>
-            <p className="mt-6 text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="mt-6 text-gray-200 text-lg max-w-2xl mx-auto">
               Whether your project is big or small, Central Valley Disposal has the right roll-off
               container and a team ready to help.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:2093581710"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-primary font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Call (209) 358-1710
               </a>
@@ -837,7 +837,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">P</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Phone</h4>
             <a
@@ -855,7 +855,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">E</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Email</h4>
             <a
@@ -873,7 +873,7 @@ function Contact() {
             }`}
           >
             <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-black text-primary">A</span>
+              <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
             </div>
             <h4 className="mt-5 text-lg font-bold text-foreground">Address</h4>
             <p className="mt-2 text-muted font-medium">
@@ -915,18 +915,18 @@ function Contact() {
    ═══════════════════════════════════════════════════ */
 function Footer() {
   return (
-    <footer className="bg-[#0c1f4d] text-white">
+    <footer className="bg-[#0a1628] text-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-14">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
             <div className="flex flex-col leading-tight">
               <span className="text-xl font-extrabold tracking-tight">Central Valley</span>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-red-400">
                 Disposal
               </span>
             </div>
-            <p className="mt-4 text-blue-200/70 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed max-w-xs">
               Family-owned since 1985. Reliable roll-off dumpster rentals proudly serving Merced
               County, California.
             </p>
@@ -934,7 +934,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h5 className="font-bold text-sm uppercase tracking-wider text-blue-200 mb-4">
+            <h5 className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Quick Links
             </h5>
             <div className="space-y-2.5">
@@ -948,7 +948,7 @@ function Footer() {
                   <Link
                     key={l.href}
                     href={l.href}
-                    className="block text-blue-200/70 hover:text-white transition-colors text-sm"
+                    className="block text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {l.label}
                   </Link>
@@ -967,10 +967,10 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h5 className="font-bold text-sm uppercase tracking-wider text-blue-200 mb-4">
+            <h5 className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Contact Info
             </h5>
-            <div className="space-y-3 text-sm text-blue-200/70">
+            <div className="space-y-3 text-sm text-gray-400">
               <a href="tel:2093581710" className="block hover:text-white transition-colors">
                 (209) 358-1710
               </a>
@@ -986,11 +986,11 @@ function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <p className="text-blue-200/50 text-xs">
+          <p className="text-gray-500 text-xs">
             We service Merced County, excluding the city limits of Merced, Los Banos, Dos Palos and
             Livingston.
           </p>
-          <p className="mt-3 text-blue-200/40 text-xs">
+          <p className="mt-3 text-gray-500/60 text-xs">
             &copy; {new Date().getFullYear()} Central Valley Disposal. All rights reserved.{" "}
             <a href="#" className="hover:text-white transition-colors">Terms of Use</a>{" "}
             |{" "}
