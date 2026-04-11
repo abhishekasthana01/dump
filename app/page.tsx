@@ -82,14 +82,10 @@ function Navbar() {
     <nav
       id="navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass shadow-card py-3"
-          : "bg-transparent py-5"
+        scrolled ? "glass shadow-card py-3" : "bg-transparent py-5"
       }`}
     >
-      
       <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between">
-        {/* Logo / Brand */}
         <Link href="/" className="flex flex-col leading-tight group">
           <span
             className={`text-xl md:text-2xl font-extrabold tracking-tight transition-colors duration-300 ${
@@ -107,35 +103,20 @@ function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-1">
-          {links.map((l) =>
-            l.href.startsWith("/") ? (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/15 ${
-                  scrolled
-                    ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
-                    : "text-white/90 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/15 ${
-                  scrolled
-                    ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
-                    : "text-white/90 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </a>
-            )
-          )}
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/15 ${
+                scrolled
+                  ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
           <a
             href="tel:2093581710"
             className={`ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
@@ -147,16 +128,12 @@ function Navbar() {
             (209) 358-1710
           </a>
         </div>
-        <div>
-          
-        </div>
-        <a
+                 <a
             href="tel:2093581710"
             className=" px-5 py-2 lg:hidden  rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
           >
             Call Us
           </a>
-        {/* Mobile burger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden flex flex-col gap-[5px] p-2"
@@ -179,43 +156,29 @@ function Navbar() {
           />
         </button>
       </div>
-      
-      {/* Mobile menu */}
+
       <div
         className={`lg:hidden glass shadow-card overflow-hidden transition-all duration-500 ${
           menuOpen ? "max-h-[400px] mt-2" : "max-h-0"
         }`}
       >
-        
         <div className="px-5 py-4 flex flex-col gap-1">
-          {links.map((l) =>
-            l.href.startsWith("/") ? (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 rounded-lg text-foreground/80 font-medium hover:bg-primary/5 hover:text-primary transition-colors"
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 rounded-lg text-foreground/80 font-medium hover:bg-primary/5 hover:text-primary transition-colors"
-              >
-                {l.label}
-              </a>
-            )
-          )}
-          
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setMenuOpen(false)}
+              className="px-4 py-3 rounded-lg text-foreground/80 font-medium hover:bg-primary/5 hover:text-primary transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+         
         </div>
       </div>
     </nav>
   );
 }
-
 /* ═══════════════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════════════ */
