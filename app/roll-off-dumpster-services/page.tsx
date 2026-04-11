@@ -81,7 +81,7 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className={`fixed top-10 lg:top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "glass shadow-card py-3" : "bg-transparent py-5"
       }`}
     >
@@ -128,7 +128,12 @@ function Navbar() {
             (209) 358-1710
           </a>
         </div>
-
+                 <a
+            href="tel:2093581710"
+            className=" px-5 py-2 lg:hidden  rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
+          >
+            Call Us
+          </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden flex flex-col gap-[5px] p-2"
@@ -168,12 +173,7 @@ function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="tel:2093581710"
-            className="mt-2 px-5 py-3 rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
-          >
-            Call (209) 358-1710
-          </a>
+         
         </div>
       </div>
     </nav>
@@ -1212,7 +1212,7 @@ function Footer() {
 export default function RollOffDumpsterServicesPage() {
   return (
     <main>
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
       <PageHero />
       <Intro />
