@@ -130,7 +130,7 @@ function Navbar() {
         </div>
                  <a
             href="tel:2093581710"
-            className=" px-5 py-2 lg:hidden  rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
+            className=" px-5 py-2 lg:hidden ml-20 rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
           >
             Call Us
           </a>

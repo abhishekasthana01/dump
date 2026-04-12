@@ -130,7 +130,7 @@ function Navbar() {
         </div>
           <a
             href="tel:2093581710"
-            className=" px-5 py-2 lg:hidden  rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
+            className=" px-5 py-2 lg:hidden ml-20 rounded-lg bg-primary text-white text-center font-semibold hover:bg-primary-dark transition-colors"
           >
             Call Us
           </a>
@@ -224,7 +224,7 @@ function ContactHero() {
           <h1 className="animate-fade-in-up text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
             Connect With
             <br />
-            <span className="text-red-300">Central Valley Disposal</span>
+            <span className="text-white">Central Valley Disposal</span>
           </h1>
 
           <p className="animate-fade-in-up delay-200 mt-6 text-lg md:text-xl text-gray-200/90 max-w-xl leading-relaxed">
