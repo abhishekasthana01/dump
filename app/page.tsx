@@ -401,7 +401,7 @@ function Process() {
               }`}
             >
               {/* Step number */}
-              <div className="text-5xl font-black text-primary/10 group-hover:text-primary/20 transition-colors duration-500">
+              <div className="text-5xl font-black text-primary/80 group-hover:text-primary/100 transition-colors duration-500">
                 {step.num}
               </div>
               <h3 className="mt-2 text-xl font-bold text-foreground">{step.title}</h3>
